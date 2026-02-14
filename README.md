@@ -72,7 +72,7 @@ This project evaluates multiple machine learning models to determine which perfo
 
 | Naive Bayes            | 0.8534   | 0.8300    | 0.8534 | 0.8573   | 0.3309 | 0.7828 |
 
-| Random Forest(Ensemble)| 0.9881   | 0.9880    | 0.9881 | 0.9879   | 0.9415 | 0.9922 |
+| Random Forest(Ensemble)| 0.9428   | 0.9428    | 0.9428 | 0.9360   | 0.6925 | 0.9676 |
 
 | XGBoost (Ensemble)     | 0.9438   | 0.9408    | 0.9438 | 0.9410   | 0.7079 | 0.9722 |
 
@@ -82,21 +82,14 @@ This project evaluates multiple machine learning models to determine which perfo
 
 
 
-| ML Model Name           | Observation about model performance                                                                     |
-
-|-------------------------|---------------------------------------------------------------------------------------------------------|
-
-| Logistic Regression     | Balanced performance with ~0.90 accuracy and AUC; moderate MCC indicates limited handling of imbalance. |
-
-| Decision Tree           | Very high accuracy (~0.98) but slightly lower AUC; strong MCC shows robust classification ability.      |
-
-| KNN                     | Good accuracy (~0.91) and strong recall; MCC moderate, suggesting sensitivity to dataset imbalance.     |
-
-| Naive Bayes             | Lower accuracy (~0.85) and weakest MCC; struggles with complex feature interactions.                    |
-
-| Random Forest (Ensemble)| Best overall performer with ~0.99 accuracy, very high MCC and AUC; excellent generalization.            |
-
-| XGBoost (Ensemble)      | Strong accuracy (~0.94) and high AUC; MCC indicates solid balance between precision and recall.         |
+| ML Model Name           | Observation about model performance                                                                 |
+|-------------------------|-----------------------------------------------------------------------------------------------------|
+| Logistic Regression     | Balanced performance with ~0.90 accuracy and AUC; moderate MCC (0.4366) shows limited handling of class imbalance despite solid recall. |
+| Decision Tree           | Very high accuracy (~0.98) and strong MCC (0.9030); excellent precision/recall balance, though AUC slightly lower than ensembles. |
+| KNN                     | Good accuracy (~0.91) and recall; MCC moderate (0.5136), indicating sensitivity to dataset imbalance and feature scaling. |
+| Naive Bayes             | Lowest accuracy (~0.85) and weakest MCC (0.3309); struggles with complex feature interactions, though recall remains acceptable. |
+| Random Forest (Ensemble)| Strong accuracy (~0.94) and high AUC (0.9676); MCC (0.6925) shows solid balance, but performance slightly below XGBoost. |
+| XGBoost (Ensemble)      | Excellent accuracy (~0.94) with highest AUC (0.9722); MCC (0.7079) indicates robust balance between precision and recall, making it the most reliable overall. |
 
 
 
@@ -121,6 +114,7 @@ This project evaluates multiple machine learning models to determine which perfo
 \- `model/train\_models.py` → Training script for all models
 
 \- `model/saved\_models/` → Pickled models and scaler
+
 
 
 
