@@ -60,21 +60,14 @@ This project evaluates multiple machine learning models to determine which perfo
 
 
 
-| ML Model Name          | Accuracy | Precision | Recall | F1 Score | MCC    | AUC    |
-
-|------------------------|----------|-----------|--------|----------|--------|--------|
-
-| Logistic Regression    | 0.9026   | 0.8885    | 0.9026 | 0.8896   | 0.4366 | 0.9025 |
-
-| Decision Tree          | 0.9796   | 0.9799    | 0.9796 | 0.9798   | 0.9030 | 0.9572 |
-
-| KNN                    | 0.9130   | 0.8616    | 0.9130 | 0.9037   | 0.5136 | 0.9361 |
-
-| Naive Bayes            | 0.8534   | 0.8300    | 0.8534 | 0.8573   | 0.3309 | 0.7828 |
-
-| Random Forest(Ensemble)| 0.9428   | 0.9428    | 0.9428 | 0.9360   | 0.6925 | 0.9676 |
-
-| XGBoost (Ensemble)     | 0.9438   | 0.9408    | 0.9438 | 0.9410   | 0.7079 | 0.9722 |
+| ML Model Name            | Accuracy | Precision | Recall | F1 Score |   MCC   |   AUC   |
+|--------------------------|----------|-----------|--------|----------|---------|---------|
+| Logistic Regression      | 0.9026   | 0.8885    | 0.9026 | 0.8896   | 0.4366  | 0.9025  |
+| Decision Tree            | 0.9796   | 0.9799    | 0.9796 | 0.9798   | 0.9030  | 0.9572  |
+| KNN                      | 0.9130   | 0.8616    | 0.9130 | 0.9037   | 0.5136  | 0.9361  |
+| Naive Bayes              | 0.8534   | 0.8300    | 0.8534 | 0.8573   | 0.3309  | 0.7828  |
+| Random Forest (Ensemble) | 0.9428   | 0.9428    | 0.9428 | 0.9360   | 0.6925  | 0.9676  |
+| XGBoost (Ensemble)       | 0.9438   | 0.9408    | 0.9438 | 0.9410   | 0.7079  | 0.9722  |
 
 
 
@@ -114,6 +107,7 @@ This project evaluates multiple machine learning models to determine which perfo
 \- `model/train\_models.py` → Training script for all models
 
 \- `model/saved\_models/` → Pickled models and scaler
+
 
 
 
