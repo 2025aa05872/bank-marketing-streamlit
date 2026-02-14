@@ -41,7 +41,7 @@ models = {
     "Decision_Tree.pkl": DecisionTreeClassifier(),
     "KNN.pkl": KNeighborsClassifier(),
     "Naive_Bayes.pkl": GaussianNB(),
-    "Random_Forest.pkl": RandomForestClassifier(),
+    "Random_Forest.pkl": RandomForestClassifier(n_estimators=100, max_depth=15, random_state=42),
     "XGBoost.pkl": xgb.XGBClassifier(eval_metric="logloss")
 }
 
@@ -50,5 +50,6 @@ for filename, model in models.items():
     model.fit(X_train, y_train)
     with open(f"model/saved_models/{filename}", "wb") as f:
         pickle.dump(model, f)
+
 
 print("Training complete. Models and scaler saved in model/saved_models/")
