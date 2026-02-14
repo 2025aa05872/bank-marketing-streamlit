@@ -2,6 +2,7 @@ import streamlit as st_lit
 import pandas as pd
 import pickle
 import os
+import requests
 from sklearn.metrics import (
     accuracy_score, roc_auc_score, precision_score, recall_score,
     f1_score, matthews_corrcoef, confusion_matrix, classification_report
@@ -12,12 +13,21 @@ import matplotlib.pyplot as plt
 st_lit.title("📊 Bank Marketing Classification Models (UCI ML Dataset)")
 
 # Provide GitHub download link for validation file
-st_lit.markdown(
-    """
-    **📥 Bank Marketing Validation Data File:**  
-    [Click here to download ➡️](https://github.com/2025aa05872/bank-marketing-streamlit/raw/main/data/bank_validation_small.csv)
-    """
-)
+github_url = "https://github.com/2025aa05872/bank-marketing-streamlit/raw/main/data/bank_validation_small.csv"
+
+try:
+    response = requests.get(github_url)
+    response.raise_for_status()  # check for errors
+    csv_data = response.content
+
+    st_lit.download_button(
+        label="📥 Download Bank Marketing Validation Data File",
+        data=csv_data,
+        file_name="bank_validation_small.csv",
+        mime="text/csv"
+    )
+except Exception as e:
+    st_lit.error(f"Unable to fetch file from GitHub: {e}")
 
 # Load scaler
 scaler = None
@@ -107,3 +117,4 @@ if os.path.exists("model/saved_models"):
 else:
 
     st_lit.warning("No saved models found. Please train models first.")
+
