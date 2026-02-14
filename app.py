@@ -15,7 +15,7 @@ st_lit.title("📊 Bank Marketing Classification Models (UCI ML Dataset)")
 st_lit.markdown(
     """
     **📥 Bank Marketing Validation Data File:**  
-    [Click here to download ➡️](https://github.com/<your-username>/<your-repo>/raw/main/data/bank_validation_small.csv)
+    [Click here to download ➡️](https://github.com/2025aa05872/bank-marketing-streamlit/raw/main/data/bank_validation_small.csv)
     """
 )
 
@@ -105,4 +105,5 @@ if os.path.exists("model/saved_models"):
     elif uploaded_file and model_choice == "Select a model":
         st_lit.warning("Please select a trained model from the dropdown to proceed.")
 else:
+
     st_lit.warning("No saved models found. Please train models first.")
